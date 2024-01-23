@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+  <title>Página Interactiva</title>
+</head>
+<body>
+
+<!-- Secciones -->
+<section id="section1">
+  <p>Contenido de la sección 1</p>
+  <button onclick="mostrarSeccion(2)">Opción A</button>
+  <button onclick="mostrarSeccion(3)">Opción B</button>
+</section>
+
+<section id="section2" class="hidden">
+  <p>Contenido de la sección 2</p>
+  <input type="text" id="inputSection2" placeholder="Ingrese datos">
+  <button onclick="mostrarSeccion(1)">Volver</button>
+</section>
+
+<section id="section3" class="hidden">
+  <p>Contenido de la sección 3</p>
+  <input type="text" id="inputSection3" placeholder="Ingrese datos">
+  <button onclick="mostrarSeccion(1)">Volver</button>
+</section>
+
+<!-- JavaScript -->
+<script>
+  function mostrarSeccion(seccion) {
+    // Ocultar todas las secciones
+    for (let i = 1; i <= 24; i++) {
+      document.getElementById(`section${i}`).classList.add('hidden');
+    }
+
+    // Mostrar la sección seleccionada
+    document.getElementById(`section${seccion}`).classList.remove('hidden');
+  }
+</script>
+
+</body>
+</html>
+
